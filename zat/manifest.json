@@ -1,0 +1,19 @@
+{
+  "name": "Base App",
+  "author": {
+    "name": "Davide Troise",
+    "email": "troisedavide4@gmail.com",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "parameters": [],
+  "location": {
+    "support": {
+      "ticket_sidebar": "assets/index.html",
+      "new_ticket_sidebar": "assets/index.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}
