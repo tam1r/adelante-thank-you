@@ -1,1 +1,47 @@
-{}
+{
+  "triggers": {
+    "check_thank_you_on_ticket_reopened": {
+      "title": "Ticket reopened by end-user - Check for Thank you message",
+      "all": [
+        {
+          "field": "update_type",
+          "operator": "is",
+          "value": "Change"
+        },
+        {
+          "field": "role",
+          "operator": "is",
+          "value": "end_user"
+        },
+        {
+          "field": "status",
+          "operator": "value_previous",
+          "value": "solved"
+        },
+        {
+          "field": "status",
+          "operator": "value",
+          "value": "open"
+        }
+      ],
+      "actions": [
+        {
+          "field": "notification_target",
+          "value": [
+            "check_thank_you_target",
+            "\"{'ticketID': '{{ticket.id}}',  'ticketURL': '{{ticket.url}}',  'latestComment': '{{ticket.latest_public_comment}}'}\""
+          ]
+        }
+      ]
+    }
+  },
+  "targets": {
+    "check_thank_you_target": {
+      "title": "Thank you Plugin",
+      "type": "http_target",
+      "target_url": "https://hook.integromat.com/imnlitclglu87rxrynktu6csqugggo0y",
+      "method": "post",
+      "content_type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<h1>Create Account</h1>
+
+<form [formGroup]="createForm" (submit)="createContact()">
+  <mat-form-field appearance="standard">
+    <mat-label>Email</mat-label>
+    <input formControlName="username" matInput placeholder="Email" />
+  </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>API Key</mat-label>
+    <input formControlName="apiKEY" matInput placeholder="API key" />
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="!createForm.valid">
+    Create
+  </button>
+</form>

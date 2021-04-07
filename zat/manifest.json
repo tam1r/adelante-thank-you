@@ -10,8 +10,7 @@
   "parameters": [],
   "location": {
     "support": {
-      "ticket_sidebar": "assets/index.html",
-      "new_ticket_sidebar": "assets/index.html"
+      "nav_bar": "assets/index.html"
     }
   },
   "version": "1.0",

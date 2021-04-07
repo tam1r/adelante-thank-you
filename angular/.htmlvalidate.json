@@ -1,0 +1,41 @@
+{
+  "rules": {
+    "attr-quotes": "error",
+    "attribute-boolean-style": "error",
+    "attribute-empty-style": "error",
+    "class-pattern": ["error", {
+      "pattern": "^[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$"
+    }],
+    "close-attr": "error",
+    "close-order": "error",
+    "deprecated-rule": "error",
+    "deprecated": "error",
+    "doctype-html": "error",
+    "element-case": "error",
+    "element-name": "error",
+    "element-permitted-content": "error",
+    "element-permitted-occurrences": "error",
+    "element-permitted-order": "error",
+    "element-required-content": "error",
+    "empty-title": "error",
+    "meta-refresh": "error",
+    "multiple-labeled-controls": "error",
+    "no-conditional-comment": "error",
+    "no-deprecated-attr": "error",
+    "no-dup-attr": "error",
+    "no-dup-class": "error",
+    "no-dup-id": "error",
+    "no-implicit-close": "error",
+    "no-inline-style": "error",
+    "no-multiple-main": "error",
+    "no-redundant-for": "error",
+    "no-redundant-role": "error",
+    "no-trailing-whitespace": "error",
+    "prefer-button": "error",
+    "prefer-tbody": "error",
+    "script-element": "error",
+    "script-type": "error",
+    "unrecognized-char-ref": "error",
+    "void-content": "error"
+  }
+}

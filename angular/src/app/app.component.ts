@@ -20,6 +20,7 @@ export class AppComponent {
     private zendeskService: ZendeskService
   ) {
     this.zendeskService.init();
+    this.appStateService.SetState(this.appView.addAccount);
 
     this.appStateService.appState.pipe(
       tap(state => this.state = state)
