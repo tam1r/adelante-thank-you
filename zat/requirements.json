@@ -29,7 +29,7 @@
           "field": "notification_target",
           "value": [
             "check_thank_you_target",
-            "\"{'ticketID': '{{ticket.id}}',  'ticketURL': '{{ticket.url}}',  'latestComment': '{{ticket.latest_public_comment}}'}\""
+            "{\"zendeskName\": \"{{ticket.account}}\",\"ticketID\": \"{{ticket.id}}\",\"zendeskURL\": \"{{ticket.url}}\",  \"latestComment\": \"{{ticket.latest_public_comment}}\"}"
           ]
         }
       ]
