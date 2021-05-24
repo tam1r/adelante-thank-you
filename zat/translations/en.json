@@ -1,8 +1,8 @@
 {
-  "app": {
-    "name": "Zen Tunes",
-    "short_description": "Play the famous zen tunes in your help desk.",
-    "long_description": "Play the famous zen tunes in your help desk and \n listen to the beats it has to offer.",
-    "installation_instructions": "Simply click install."
-  }
+	"app": {
+		"name": "Thank you",
+		"short_description": "Automatically solve tickets that reopened because of a 'Thank you' message",
+		"long_description": "Stop waste your agents time because of the 'thank you' messages for the end-user  \n Isn't it's annoying that you spend your time answering, to help to SOLVE the ticket but the ticket reopened because of a thank you message?  \n  The thank-you plugin will analyze every comment on a ticket that reopened using an AI the plugin will close a ticket if the intent of the message it's 'thank you'.  \n  Our plugin support all the languages!  \n  Stop wasting your agents' time and get the thank you plugin right now!",
+		"installation_instructions": "**To install the app**:  \n\n - Install the app from the Zendesk Marketplace clicking the Install button on the top right of this page  \n - Click on the icon of the app on the left of your Zendesk Interface to create an account using an apikey!"
+	}
 }

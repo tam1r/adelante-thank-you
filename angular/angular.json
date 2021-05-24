@@ -28,8 +28,12 @@
             "aot": true,
             "assets": [
               "src/logo-small.png",
+              "src/screenshot-0.png",
+              "src/screenshot-1.png",
+              "src/screenshot-2.png",
               "src/logo.png",
-              "src/logo.svg"
+              "src/logo.svg",
+              "src/icon_nav_bar.svg"
             ],
             "styles": [
               "src/styles.scss"

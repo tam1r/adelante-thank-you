@@ -1,7 +1,8 @@
 {
   "triggers": {
     "check_thank_you_on_ticket_reopened": {
-      "title": "Ticket reopened by end-user - Check for Thank you message",
+      "title": "Thank you plugin - When a ticket reopened notify thank you plugin",
+      "description": "This trigger created by the thank you plugin",
       "all": [
         {
           "field": "update_type",

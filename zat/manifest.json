@@ -1,12 +1,11 @@
 {
-  "name": "Base App",
   "author": {
-    "name": "Davide Troise",
-    "email": "troisedavide4@gmail.com",
-    "url": ""
+    "name": "Adelante",
+    "email": "tamir@adelante.co.il",
+    "url": "http://getadelante.com/"
   },
   "defaultLocale": "en",
-  "private": true,
+  "private": false,
   "parameters": [],
   "location": {
     "support": {
