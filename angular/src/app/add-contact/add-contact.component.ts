@@ -5,6 +5,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { catchError, tap } from 'rxjs/operators';
 import { AppStateService } from '../services/app-state.service';
 import { ZendeskService } from '../services/zendesk.service';
+import locales from './locales';
+
+interface Language {
+  value: string;
+  text: string;
+}
 
 @Component({
   selector: 'app-add-contact',
@@ -21,6 +27,8 @@ export class AddContactComponent {
   });
   headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   context: any;
+  languages: Language[] = locales;
+  subdomain = window.location.hostname.split('.')[0];
 
   constructor(
     private appStateService: AppStateService,

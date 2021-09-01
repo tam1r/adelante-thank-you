@@ -9,7 +9,22 @@
     <mat-label>API Key</mat-label>
     <input formControlName="apiKEY" matInput placeholder="API key" />
   </mat-form-field>
+  <mat-form-field appearance="standard">
+    <mat-label>Private messages language</mat-label>
+    <mat-select formControlName="language">
+      <mat-option *ngFor="let language of languages" [value]="language.value">
+        {{language.text}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-checkbox [checked]="true" color="primary">
+    I'm interested to receive Zendesk tips and guides from Adelante
+  </mat-checkbox>
   <button type="submit" mat-raised-button color="primary" [disabled]="!createForm.valid">
     Create
   </button>
+  <p>
+    If you liked this app, please rank it 
+    <a href="https://www.zendesk.com/apps/support/thank-you/?subdomain={{this?.context?.account?.subdomain}}#ratings">here</a>
+  </p>
 </form>

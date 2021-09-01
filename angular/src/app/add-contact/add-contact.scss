@@ -13,6 +13,12 @@
 			margin-left: 5px;
 			padding-bottom: 3px;
 		}
+
+		&-checkbox {
+			min-width: 80%;
+			margin-bottom: 20px;
+			text-align: left;
+		}
 	}
 
 	form {
@@ -25,5 +31,13 @@
 
 	.mat-spinner {
 		display: inline;
+	}
+
+	button {
+		margin-bottom: 20px;
+	}
+
+	p {
+		margin-bottom: 40px;
 	}
 }
