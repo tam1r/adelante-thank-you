@@ -33,7 +33,8 @@
               "src/screenshot-2.png",
               "src/logo.png",
               "src/logo.svg",
-              "src/icon_nav_bar.svg"
+              "src/icon_nav_bar.svg",
+              "src/assets/images/check.png"
             ],
             "styles": [
               "src/styles.scss"

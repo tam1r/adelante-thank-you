@@ -23,12 +23,15 @@ export class AddContactComponent {
 
   createForm: FormGroup = this.formBuilder.group({
     username: ['', Validators.required],
-    apiKEY: ['', Validators.required]
+    apiKEY: ['', Validators.required],
+    language: ['', Validators.required],
+    emailSubscription: [true],
   });
   headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   context: any;
   languages: Language[] = locales;
   subdomain = window.location.hostname.split('.')[0];
+  isCreated = false;
 
   constructor(
     private appStateService: AppStateService,
@@ -57,10 +60,12 @@ export class AddContactComponent {
           this.createForm.reset();
           this.createForm.get('username')!.clearValidators();
           this.createForm.get('apiKEY')!.clearValidators();
+          this.createForm.get('language')!.clearValidators();
           this.createForm.get('username')!.updateValueAndValidity();
           this.createForm.get('apiKEY')!.updateValueAndValidity();
+          this.createForm.get('language')!.updateValueAndValidity();
         }),
-        tap(() => this.zendeskService.showNotification('Account created or updated correctly!')),
+        tap(() => this.isCreated = !this.isCreated),
         tap(() => this.appStateService.stopLoading()),
         catchError(
           err => {
