@@ -49,7 +49,6 @@ export class ZendeskService {
   }
 
   set(path: string, value: string): Observable<any> {
-    // debugger;
     return from(this.client.set(path, value)).pipe(
       tap(() => this.records[path] = value)
     );

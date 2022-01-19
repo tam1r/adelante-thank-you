@@ -32,6 +32,9 @@ export class AddContactComponent {
   languages: Language[] = locales;
   subdomain = window.location.hostname.split('.')[0];
   isCreated = false;
+  isLoading = true;
+  isConnected = false;
+  connectionErrorReason = '';
 
   constructor(
     private appStateService: AppStateService,
@@ -40,7 +43,33 @@ export class AddContactComponent {
     private zendeskService: ZendeskService
   ) {
     this.zendeskService.context().pipe(
-      tap(context => this.context = context),
+      tap(context => {
+        this.context = context;
+        const data = {
+          subdomain: this.context.account.subdomain
+        };
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        this.http.post('https://hook.integromat.com/ilroyoo8vg38ol4rftdoifedllmsrl2b', data, { headers, responseType: 'text' })
+          .pipe(
+            tap((response) => {
+              const result = JSON.parse(response)?.result;
+              if (result === 'false') {
+                this.isConnected = false;
+                this.connectionErrorReason = JSON.parse(response)?.reason || 'unexpected error';
+              } else if (result === 'true') {
+                this.isConnected = true;
+              }
+              this.isLoading = false;
+            }),
+            catchError(
+              err => {
+                this.isLoading = false;
+                err = (err?.error?.errors && err.error.errors[0]?.message) || err;
+                return err;
+              }
+            ),
+          ).subscribe();
+      }),
     ).subscribe();
   }
 
@@ -76,6 +105,11 @@ export class AddContactComponent {
           }
         ),
       ).subscribe();
+  }
+
+  public showChangeSettings() {
+    this.isCreated = false;
+    this.isConnected = false;
   }
 
 }
