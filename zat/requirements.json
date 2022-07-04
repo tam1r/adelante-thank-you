@@ -27,22 +27,22 @@
       ],
       "actions": [
         {
-          "field": "notification_target",
+          "field": "notification_webhook",
           "value": [
-            "check_thank_you_target",
+            "check_thank_you_webhook",
             "{\"zendeskName\": \"{{ticket.account}}\",\"ticketID\": \"{{ticket.id}}\",\"zendeskURL\": \"{{ticket.url}}\",  \"latestComment\": \"{{ticket.latest_public_comment}}\"}"
           ]
         }
       ]
     }
   },
-  "targets": {
-    "check_thank_you_target": {
-      "title": "Thank you Plugin",
-      "type": "http_target",
-      "target_url": "https://hook.integromat.com/imnlitclglu87rxrynktu6csqugggo0y",
-      "method": "post",
-      "content_type": "application/json"
+  "webhooks": {
+    "check_thank_you_webhook":  {
+      "endpoint": "https://thankyou.getadelante.com/webhook",
+      "http_method": "POST",
+      "name": "Thank you Plugin",
+      "request_format": "json",
+      "status": "active"
     }
   }
 }

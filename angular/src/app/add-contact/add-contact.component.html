@@ -14,24 +14,24 @@
       Change settings
     </button>
     <p>
-      If you liked this app, please rank it 
-      <a href="https://www.zendesk.com/apps/support/thank-you/?subdomain={{this?.context?.account?.subdomain}}#ratings">here</a>
+      If you liked this app, and want to learn more about optimising Zendesk. Click
+      <a href="https://yes.getadelante.com/automation-masterclass#">here</a>
     </p>
   </div>
-  
+
   <div *ngIf="!isConnected">
     <div *ngIf="isCreated" class="final-page-container">
       <h1>Account successfully connected!</h1>
       <img id="checkDone" src="../../check.png" alt="Check image">
       <p>
-        If you liked this app, please rank it 
-        <a href="https://www.zendesk.com/apps/support/thank-you/?subdomain={{this?.context?.account?.subdomain}}#ratings">here</a>
+        If you liked this app, and want to learn more about optimising Zendesk. Click
+        <a href="https://yes.getadelante.com/automation-masterclass#">here</a>
       </p>
     </div>
-    
+
     <div *ngIf="!isCreated">
       <h1>Create Account</h1>
-    
+
       <form [formGroup]="createForm" (submit)="createContact()">
         <p class="status-container">
           Status:
@@ -39,6 +39,18 @@
           <span *ngIf="connectionErrorReason.length" class="status-disconnected"> disconnected</span>
           <span *ngIf="connectionErrorReason.length">, {{connectionErrorReason}}</span>
         </p>
+        <mat-form-field appearance="standard">
+          <mat-label>First Name</mat-label>
+          <input formControlName="firstName" matInput placeholder="First name" />
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Last Name</mat-label>
+          <input formControlName="lastName" matInput placeholder="Last name" />
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Company</mat-label>
+          <input formControlName="company" matInput placeholder="Company" />
+        </mat-form-field>
         <mat-form-field appearance="standard">
           <mat-label>Email</mat-label>
           <input formControlName="username" matInput placeholder="Email" />
@@ -55,15 +67,25 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-checkbox [checked]="true" color="primary" formControlName="emailSubscription">
-          I'm interested to receive Zendesk tips and guides from Adelante
+        <mat-form-field appearance="standard">
+          <mat-label>Where did you hear about us?</mat-label>
+          <mat-select formControlName="referral">
+            <mat-option value="facebook">Facebook</mat-option>
+            <mat-option value="google">Google</mat-option>
+            <mat-option value="zendesk_marketplace">Zendesk Marketplace</mat-option>
+            <mat-option value="referral">Referral</mat-option>
+            <mat-option value="adelante">Adelante Website</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-checkbox [disabled]="true" [checked]="true" color="primary" formControlName="emailSubscription">
+          I agree that after installing this app I will receive Zendesk tips and guides from Adelante
         </mat-checkbox>
         <button type="submit" mat-raised-button color="primary" [disabled]="!createForm.valid">
           Create
         </button>
         <p>
-          If you liked this app, please rank it 
-          <a href="https://www.zendesk.com/apps/support/thank-you/?subdomain={{this?.context?.account?.subdomain}}#ratings">here</a>
+          If you liked this app, and want to learn more about optimising Zendesk. Click
+          <a href="https://yes.getadelante.com/automation-masterclass#">here</a>
         </p>
       </form>
     </div>

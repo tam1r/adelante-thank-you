@@ -22,9 +22,13 @@ interface Language {
 export class AddContactComponent {
 
   createForm: FormGroup = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    company: ['', Validators.required],
     username: ['', Validators.required],
     apiKEY: ['', Validators.required],
     language: ['', Validators.required],
+    referral: ['', Validators.required],
     emailSubscription: [true],
   });
   headers = new HttpHeaders({ 'Content-Type': 'application/json' });

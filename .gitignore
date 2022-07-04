@@ -45,7 +45,7 @@ typings
 # System Files
 .DS_Store
 Thumbs.db
-
-# ZAT 
+Archive.zip
+# ZAT
 zat/assets
 zat/tmp
