@@ -53,7 +53,7 @@ export class AddContactComponent {
           subdomain: this.context.account.subdomain
         };
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-        this.http.post('https://hook.integromat.com/ilroyoo8vg38ol4rftdoifedllmsrl2b', data, { headers, responseType: 'text' })
+        this.http.post('https://hook.integromat.com/nu47av1jc2anejxrjoi53wh5n61jxl6l', data, { headers, responseType: 'text' })
           .pipe(
             tap((response) => {
               const result = JSON.parse(response)?.result;
