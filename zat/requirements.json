@@ -1,8 +1,8 @@
 {
   "triggers": {
     "check_thank_you_on_ticket_reopened": {
-      "title": "Thank you plugin - When a ticket reopened notify thank you plugin",
-      "description": "This trigger created by the thank you plugin",
+      "title": "Thank you plugin trigger- When a ticket reopened notify thank you plugin(V1)",
+      "description": "This trigger is automatically created by the thank you plugin. Once a ticket is re-opened by an end-user, this trigger notifies the thank you app. In case you want to edit the conditions (for example, to limit it to certain groups), you can clone this trigger, edit the conditions and de-activate the original version",
       "all": [
         {
           "field": "update_type",
